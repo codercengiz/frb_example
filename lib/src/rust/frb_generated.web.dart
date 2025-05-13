@@ -26,6 +26,10 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
       wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime;
 
   CrossPlatformFinalizerArg
+  get rust_arc_decrement_strong_count_ParentStructPtr =>
+      wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct;
+
+  CrossPlatformFinalizerArg
   get rust_arc_decrement_strong_count_VariantOpaqueStructPtr =>
       wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct;
 
@@ -39,14 +43,32 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  ParentStruct
+  dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    dynamic raw,
+  );
+
+  @protected
   VariantOpaqueStruct
   dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     dynamic raw,
   );
 
   @protected
+  ParentStruct
+  dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    dynamic raw,
+  );
+
+  @protected
   VariantOpaqueStruct
   dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    dynamic raw,
+  );
+
+  @protected
+  ParentStruct
+  dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
     dynamic raw,
   );
 
@@ -63,6 +85,12 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  ParentStruct
+  dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    dynamic raw,
+  );
+
+  @protected
   VariantOpaqueStruct
   dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     dynamic raw,
@@ -73,9 +101,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   ChildStruct dco_decode_box_autoadd_child_struct(dynamic raw);
-
-  @protected
-  ParentStruct dco_decode_box_autoadd_parent_struct(dynamic raw);
 
   @protected
   VariantNonOpaqueStruct dco_decode_box_autoadd_variant_non_opaque_struct(
@@ -98,9 +123,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   ChildStruct? dco_decode_opt_box_autoadd_child_struct(dynamic raw);
-
-  @protected
-  ParentStruct dco_decode_parent_struct(dynamic raw);
 
   @protected
   int dco_decode_u_8(dynamic raw);
@@ -127,14 +149,32 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  ParentStruct
+  sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    SseDeserializer deserializer,
+  );
+
+  @protected
   VariantOpaqueStruct
   sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     SseDeserializer deserializer,
   );
 
   @protected
+  ParentStruct
+  sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    SseDeserializer deserializer,
+  );
+
+  @protected
   VariantOpaqueStruct
   sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    SseDeserializer deserializer,
+  );
+
+  @protected
+  ParentStruct
+  sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
     SseDeserializer deserializer,
   );
 
@@ -151,6 +191,12 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  ParentStruct
+  sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    SseDeserializer deserializer,
+  );
+
+  @protected
   VariantOpaqueStruct
   sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     SseDeserializer deserializer,
@@ -161,11 +207,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   ChildStruct sse_decode_box_autoadd_child_struct(SseDeserializer deserializer);
-
-  @protected
-  ParentStruct sse_decode_box_autoadd_parent_struct(
-    SseDeserializer deserializer,
-  );
 
   @protected
   VariantNonOpaqueStruct sse_decode_box_autoadd_variant_non_opaque_struct(
@@ -190,9 +231,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   ChildStruct? sse_decode_opt_box_autoadd_child_struct(
     SseDeserializer deserializer,
   );
-
-  @protected
-  ParentStruct sse_decode_parent_struct(SseDeserializer deserializer);
 
   @protected
   int sse_decode_u_8(SseDeserializer deserializer);
@@ -234,6 +272,13 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+  sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    ParentStruct self,
+    SseSerializer serializer,
+  );
+
+  @protected
+  void
   sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     VariantOpaqueStruct self,
     SseSerializer serializer,
@@ -241,8 +286,22 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+  sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    ParentStruct self,
+    SseSerializer serializer,
+  );
+
+  @protected
+  void
   sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     VariantOpaqueStruct self,
+    SseSerializer serializer,
+  );
+
+  @protected
+  void
+  sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    ParentStruct self,
     SseSerializer serializer,
   );
 
@@ -262,6 +321,13 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
+  sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    ParentStruct self,
+    SseSerializer serializer,
+  );
+
+  @protected
+  void
   sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     VariantOpaqueStruct self,
     SseSerializer serializer,
@@ -273,12 +339,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   @protected
   void sse_encode_box_autoadd_child_struct(
     ChildStruct self,
-    SseSerializer serializer,
-  );
-
-  @protected
-  void sse_encode_box_autoadd_parent_struct(
-    ParentStruct self,
     SseSerializer serializer,
   );
 
@@ -311,9 +371,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
     ChildStruct? self,
     SseSerializer serializer,
   );
-
-  @protected
-  void sse_encode_parent_struct(ParentStruct self, SseSerializer serializer);
 
   @protected
   void sse_encode_u_8(int self, SseSerializer serializer);
@@ -365,6 +422,22 @@ class RustLibWire implements BaseWire {
       );
 
   void
+  rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    int ptr,
+  ) => wasmModule
+      .rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+        ptr,
+      );
+
+  void
+  rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    int ptr,
+  ) => wasmModule
+      .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+        ptr,
+      );
+
+  void
   rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
     int ptr,
   ) => wasmModule
@@ -394,6 +467,16 @@ extension type RustLibWasmModule._(JSObject _) implements JSObject {
 
   external void
   rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+    int ptr,
+  );
+
+  external void
+  rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
+    int ptr,
+  );
+
+  external void
+  rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerParentStruct(
     int ptr,
   );
 

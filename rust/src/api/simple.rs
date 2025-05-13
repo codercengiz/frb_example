@@ -12,7 +12,8 @@ pub fn init_app() {
     flutter_rust_bridge::setup_default_user_utils();
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug)]
+#[flutter_rust_bridge::frb(opaque)]
 pub struct ParentStruct {
     pub id: String,
     pub name: String,
@@ -93,7 +94,7 @@ impl ParentStruct {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug)]
 #[flutter_rust_bridge::frb(non_opaque)]
 pub struct ChildStruct {
     pub id: String,

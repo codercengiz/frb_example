@@ -9,10 +9,39 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 import 'package:freezed_annotation/freezed_annotation.dart' hide protected;
 part 'simple.freezed.dart';
 
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `clone`, `clone`, `clone`, `clone`, `clone`, `fmt`, `fmt`, `fmt`, `fmt`, `fmt`, `fmt`
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `clone`, `clone`, `clone`, `fmt`, `fmt`, `fmt`, `fmt`, `fmt`, `fmt`
 
 String greet({required String name}) =>
     RustLib.instance.api.crateApiSimpleGreet(name: name);
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<ParentStruct>>
+abstract class ParentStruct implements RustOpaqueInterface {
+  ChildStruct? get child;
+
+  String get id;
+
+  String get name;
+
+  set child(ChildStruct? child);
+
+  set id(String id);
+
+  set name(String name);
+
+  static ParentStruct newVariant1() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant1();
+
+  static ParentStruct newVariant2() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant2();
+
+  static ParentStruct newVariant3() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant3();
+
+  static ParentStruct newVariant4() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant4();
+
+  String toJsonString();
+}
 
 // Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<VariantOpaqueStruct>>
 abstract class VariantOpaqueStruct implements RustOpaqueInterface {
@@ -68,41 +97,6 @@ sealed class EnumStruct with _$EnumStruct {
   const factory EnumStruct.variant3() = EnumStruct_Variant3;
   const factory EnumStruct.variant4(VariantWithoutTimestamp field0) =
       EnumStruct_Variant4;
-}
-
-class ParentStruct {
-  final String id;
-  final String name;
-  final ChildStruct? child;
-
-  const ParentStruct({required this.id, required this.name, this.child});
-
-  static ParentStruct newVariant1() =>
-      RustLib.instance.api.crateApiSimpleParentStructNewVariant1();
-
-  static ParentStruct newVariant2() =>
-      RustLib.instance.api.crateApiSimpleParentStructNewVariant2();
-
-  static ParentStruct newVariant3() =>
-      RustLib.instance.api.crateApiSimpleParentStructNewVariant3();
-
-  static ParentStruct newVariant4() =>
-      RustLib.instance.api.crateApiSimpleParentStructNewVariant4();
-
-  String toJsonString() =>
-      RustLib.instance.api.crateApiSimpleParentStructToJsonString(that: this);
-
-  @override
-  int get hashCode => id.hashCode ^ name.hashCode ^ child.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ParentStruct &&
-          runtimeType == other.runtimeType &&
-          id == other.id &&
-          name == other.name &&
-          child == other.child;
 }
 
 class VariantNonOpaqueStruct {
