@@ -4,7 +4,145 @@
 // ignore_for_file: invalid_use_of_internal_member, unused_import, unnecessary_import
 
 import '../frb_generated.dart';
+import '../lib.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
+import 'package:freezed_annotation/freezed_annotation.dart' hide protected;
+part 'simple.freezed.dart';
+
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `clone`, `clone`, `clone`, `clone`, `clone`, `fmt`, `fmt`, `fmt`, `fmt`, `fmt`, `fmt`
 
 String greet({required String name}) =>
     RustLib.instance.api.crateApiSimpleGreet(name: name);
+
+// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<VariantOpaqueStruct>>
+abstract class VariantOpaqueStruct implements RustOpaqueInterface {
+  String get id;
+
+  String get name;
+
+  OffsetDateTime get timestamp;
+
+  set id(String id);
+
+  set name(String name);
+
+  set timestamp(OffsetDateTime timestamp);
+}
+
+class ChildStruct {
+  final String id;
+  final String name;
+  final String parentId;
+  final EnumStruct variant;
+
+  const ChildStruct({
+    required this.id,
+    required this.name,
+    required this.parentId,
+    required this.variant,
+  });
+
+  @override
+  int get hashCode =>
+      id.hashCode ^ name.hashCode ^ parentId.hashCode ^ variant.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ChildStruct &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name &&
+          parentId == other.parentId &&
+          variant == other.variant;
+}
+
+@freezed
+sealed class EnumStruct with _$EnumStruct {
+  const EnumStruct._();
+
+  const factory EnumStruct.variant1(VariantNonOpaqueStruct field0) =
+      EnumStruct_Variant1;
+  const factory EnumStruct.variant2(VariantOpaqueStruct field0) =
+      EnumStruct_Variant2;
+  const factory EnumStruct.variant3() = EnumStruct_Variant3;
+  const factory EnumStruct.variant4(VariantWithoutTimestamp field0) =
+      EnumStruct_Variant4;
+}
+
+class ParentStruct {
+  final String id;
+  final String name;
+  final ChildStruct? child;
+
+  const ParentStruct({required this.id, required this.name, this.child});
+
+  static ParentStruct newVariant1() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant1();
+
+  static ParentStruct newVariant2() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant2();
+
+  static ParentStruct newVariant3() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant3();
+
+  static ParentStruct newVariant4() =>
+      RustLib.instance.api.crateApiSimpleParentStructNewVariant4();
+
+  String toJsonString() =>
+      RustLib.instance.api.crateApiSimpleParentStructToJsonString(that: this);
+
+  @override
+  int get hashCode => id.hashCode ^ name.hashCode ^ child.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ParentStruct &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name &&
+          child == other.child;
+}
+
+class VariantNonOpaqueStruct {
+  final String id;
+  final String name;
+  final OffsetDateTime timestamp;
+
+  const VariantNonOpaqueStruct({
+    required this.id,
+    required this.name,
+    required this.timestamp,
+  });
+
+  @override
+  int get hashCode => id.hashCode ^ name.hashCode ^ timestamp.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is VariantNonOpaqueStruct &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name &&
+          timestamp == other.timestamp;
+}
+
+class VariantWithoutTimestamp {
+  final String id;
+  final String name;
+
+  const VariantWithoutTimestamp({required this.id, required this.name});
+
+  @override
+  int get hashCode => id.hashCode ^ name.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is VariantWithoutTimestamp &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name;
+}

@@ -37,6 +37,8 @@ dependencies:
   rust_lib_frb_example:
     path: rust_builder
   flutter_rust_bridge: 2.9.0
+  freezed_annotation: ^3.0.0
+  my_json_view: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +50,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  freezed: ^3.0.6
+  build_runner: ^2.4.15
   integration_test:
     sdk: flutter
 

@@ -9,6 +9,7 @@ import 'dart:convert';
 import 'frb_generated.dart';
 import 'frb_generated.io.dart'
     if (dart.library.js_interop) 'frb_generated.web.dart';
+import 'lib.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 /// Main entrypoint of the Rust API
@@ -64,7 +65,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.9.0';
 
   @override
-  int get rustContentHash => -1918914929;
+  int get rustContentHash => 1532544193;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -75,9 +76,64 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
 }
 
 abstract class RustLibApi extends BaseApi {
+  String crateApiSimpleVariantOpaqueStructAutoAccessorGetId({
+    required VariantOpaqueStruct that,
+  });
+
+  String crateApiSimpleVariantOpaqueStructAutoAccessorGetName({
+    required VariantOpaqueStruct that,
+  });
+
+  OffsetDateTime crateApiSimpleVariantOpaqueStructAutoAccessorGetTimestamp({
+    required VariantOpaqueStruct that,
+  });
+
+  void crateApiSimpleVariantOpaqueStructAutoAccessorSetId({
+    required VariantOpaqueStruct that,
+    required String id,
+  });
+
+  void crateApiSimpleVariantOpaqueStructAutoAccessorSetName({
+    required VariantOpaqueStruct that,
+    required String name,
+  });
+
+  void crateApiSimpleVariantOpaqueStructAutoAccessorSetTimestamp({
+    required VariantOpaqueStruct that,
+    required OffsetDateTime timestamp,
+  });
+
   String crateApiSimpleGreet({required String name});
 
   Future<void> crateApiSimpleInitApp();
+
+  ParentStruct crateApiSimpleParentStructNewVariant1();
+
+  ParentStruct crateApiSimpleParentStructNewVariant2();
+
+  ParentStruct crateApiSimpleParentStructNewVariant3();
+
+  ParentStruct crateApiSimpleParentStructNewVariant4();
+
+  String crateApiSimpleParentStructToJsonString({required ParentStruct that});
+
+  RustArcIncrementStrongCountFnType
+  get rust_arc_increment_strong_count_OffsetDateTime;
+
+  RustArcDecrementStrongCountFnType
+  get rust_arc_decrement_strong_count_OffsetDateTime;
+
+  CrossPlatformFinalizerArg
+  get rust_arc_decrement_strong_count_OffsetDateTimePtr;
+
+  RustArcIncrementStrongCountFnType
+  get rust_arc_increment_strong_count_VariantOpaqueStruct;
+
+  RustArcDecrementStrongCountFnType
+  get rust_arc_decrement_strong_count_VariantOpaqueStruct;
+
+  CrossPlatformFinalizerArg
+  get rust_arc_decrement_strong_count_VariantOpaqueStructPtr;
 }
 
 class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
@@ -89,13 +145,219 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   });
 
   @override
+  String crateApiSimpleVariantOpaqueStructAutoAccessorGetId({
+    required VariantOpaqueStruct that,
+  }) {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+            that,
+            serializer,
+          );
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 1)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_String,
+          decodeErrorData: null,
+        ),
+        constMeta: kCrateApiSimpleVariantOpaqueStructAutoAccessorGetIdConstMeta,
+        argValues: [that],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta
+  get kCrateApiSimpleVariantOpaqueStructAutoAccessorGetIdConstMeta =>
+      const TaskConstMeta(
+        debugName: "VariantOpaqueStruct_auto_accessor_get_id",
+        argNames: ["that"],
+      );
+
+  @override
+  String crateApiSimpleVariantOpaqueStructAutoAccessorGetName({
+    required VariantOpaqueStruct that,
+  }) {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+            that,
+            serializer,
+          );
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 2)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_String,
+          decodeErrorData: null,
+        ),
+        constMeta:
+            kCrateApiSimpleVariantOpaqueStructAutoAccessorGetNameConstMeta,
+        argValues: [that],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta
+  get kCrateApiSimpleVariantOpaqueStructAutoAccessorGetNameConstMeta =>
+      const TaskConstMeta(
+        debugName: "VariantOpaqueStruct_auto_accessor_get_name",
+        argNames: ["that"],
+      );
+
+  @override
+  OffsetDateTime crateApiSimpleVariantOpaqueStructAutoAccessorGetTimestamp({
+    required VariantOpaqueStruct that,
+  }) {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+            that,
+            serializer,
+          );
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 3)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData:
+              sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime,
+          decodeErrorData: null,
+        ),
+        constMeta:
+            kCrateApiSimpleVariantOpaqueStructAutoAccessorGetTimestampConstMeta,
+        argValues: [that],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta
+  get kCrateApiSimpleVariantOpaqueStructAutoAccessorGetTimestampConstMeta =>
+      const TaskConstMeta(
+        debugName: "VariantOpaqueStruct_auto_accessor_get_timestamp",
+        argNames: ["that"],
+      );
+
+  @override
+  void crateApiSimpleVariantOpaqueStructAutoAccessorSetId({
+    required VariantOpaqueStruct that,
+    required String id,
+  }) {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+            that,
+            serializer,
+          );
+          sse_encode_String(id, serializer);
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 4)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_unit,
+          decodeErrorData: null,
+        ),
+        constMeta: kCrateApiSimpleVariantOpaqueStructAutoAccessorSetIdConstMeta,
+        argValues: [that, id],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta
+  get kCrateApiSimpleVariantOpaqueStructAutoAccessorSetIdConstMeta =>
+      const TaskConstMeta(
+        debugName: "VariantOpaqueStruct_auto_accessor_set_id",
+        argNames: ["that", "id"],
+      );
+
+  @override
+  void crateApiSimpleVariantOpaqueStructAutoAccessorSetName({
+    required VariantOpaqueStruct that,
+    required String name,
+  }) {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+            that,
+            serializer,
+          );
+          sse_encode_String(name, serializer);
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 5)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_unit,
+          decodeErrorData: null,
+        ),
+        constMeta:
+            kCrateApiSimpleVariantOpaqueStructAutoAccessorSetNameConstMeta,
+        argValues: [that, name],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta
+  get kCrateApiSimpleVariantOpaqueStructAutoAccessorSetNameConstMeta =>
+      const TaskConstMeta(
+        debugName: "VariantOpaqueStruct_auto_accessor_set_name",
+        argNames: ["that", "name"],
+      );
+
+  @override
+  void crateApiSimpleVariantOpaqueStructAutoAccessorSetTimestamp({
+    required VariantOpaqueStruct that,
+    required OffsetDateTime timestamp,
+  }) {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+            that,
+            serializer,
+          );
+          sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+            timestamp,
+            serializer,
+          );
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 6)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_unit,
+          decodeErrorData: null,
+        ),
+        constMeta:
+            kCrateApiSimpleVariantOpaqueStructAutoAccessorSetTimestampConstMeta,
+        argValues: [that, timestamp],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta
+  get kCrateApiSimpleVariantOpaqueStructAutoAccessorSetTimestampConstMeta =>
+      const TaskConstMeta(
+        debugName: "VariantOpaqueStruct_auto_accessor_set_timestamp",
+        argNames: ["that", "timestamp"],
+      );
+
+  @override
   String crateApiSimpleGreet({required String name}) {
     return handler.executeSync(
       SyncTask(
         callFfi: () {
           final serializer = SseSerializer(generalizedFrbRustBinding);
           sse_encode_String(name, serializer);
-          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 1)!;
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 7)!;
         },
         codec: SseCodec(
           decodeSuccessData: sse_decode_String,
@@ -120,7 +382,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 2,
+            funcId: 8,
             port: port_,
           );
         },
@@ -138,6 +400,208 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   TaskConstMeta get kCrateApiSimpleInitAppConstMeta =>
       const TaskConstMeta(debugName: "init_app", argNames: []);
 
+  @override
+  ParentStruct crateApiSimpleParentStructNewVariant1() {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 9)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_parent_struct,
+          decodeErrorData: null,
+        ),
+        constMeta: kCrateApiSimpleParentStructNewVariant1ConstMeta,
+        argValues: [],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiSimpleParentStructNewVariant1ConstMeta =>
+      const TaskConstMeta(
+        debugName: "parent_struct_new_variant1",
+        argNames: [],
+      );
+
+  @override
+  ParentStruct crateApiSimpleParentStructNewVariant2() {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 10)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_parent_struct,
+          decodeErrorData: null,
+        ),
+        constMeta: kCrateApiSimpleParentStructNewVariant2ConstMeta,
+        argValues: [],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiSimpleParentStructNewVariant2ConstMeta =>
+      const TaskConstMeta(
+        debugName: "parent_struct_new_variant2",
+        argNames: [],
+      );
+
+  @override
+  ParentStruct crateApiSimpleParentStructNewVariant3() {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 11)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_parent_struct,
+          decodeErrorData: null,
+        ),
+        constMeta: kCrateApiSimpleParentStructNewVariant3ConstMeta,
+        argValues: [],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiSimpleParentStructNewVariant3ConstMeta =>
+      const TaskConstMeta(
+        debugName: "parent_struct_new_variant3",
+        argNames: [],
+      );
+
+  @override
+  ParentStruct crateApiSimpleParentStructNewVariant4() {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 12)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_parent_struct,
+          decodeErrorData: null,
+        ),
+        constMeta: kCrateApiSimpleParentStructNewVariant4ConstMeta,
+        argValues: [],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiSimpleParentStructNewVariant4ConstMeta =>
+      const TaskConstMeta(
+        debugName: "parent_struct_new_variant4",
+        argNames: [],
+      );
+
+  @override
+  String crateApiSimpleParentStructToJsonString({required ParentStruct that}) {
+    return handler.executeSync(
+      SyncTask(
+        callFfi: () {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_box_autoadd_parent_struct(that, serializer);
+          return pdeCallFfi(generalizedFrbRustBinding, serializer, funcId: 13)!;
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_String,
+          decodeErrorData: sse_decode_AnyhowException,
+        ),
+        constMeta: kCrateApiSimpleParentStructToJsonStringConstMeta,
+        argValues: [that],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiSimpleParentStructToJsonStringConstMeta =>
+      const TaskConstMeta(
+        debugName: "parent_struct_to_json_string",
+        argNames: ["that"],
+      );
+
+  RustArcIncrementStrongCountFnType
+  get rust_arc_increment_strong_count_OffsetDateTime =>
+      wire.rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime;
+
+  RustArcDecrementStrongCountFnType
+  get rust_arc_decrement_strong_count_OffsetDateTime =>
+      wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime;
+
+  RustArcIncrementStrongCountFnType
+  get rust_arc_increment_strong_count_VariantOpaqueStruct =>
+      wire.rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct;
+
+  RustArcDecrementStrongCountFnType
+  get rust_arc_decrement_strong_count_VariantOpaqueStruct =>
+      wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct;
+
+  @protected
+  AnyhowException dco_decode_AnyhowException(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return AnyhowException(raw as String);
+  }
+
+  @protected
+  OffsetDateTime
+  dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return OffsetDateTimeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  VariantOpaqueStruct
+  dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  VariantOpaqueStruct
+  dco_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  VariantOpaqueStruct
+  dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  OffsetDateTime
+  dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return OffsetDateTimeImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
+  @protected
+  VariantOpaqueStruct
+  dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalDcoDecode(raw as List<dynamic>);
+  }
+
   @protected
   String dco_decode_String(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
@@ -145,9 +609,95 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  ChildStruct dco_decode_box_autoadd_child_struct(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_child_struct(raw);
+  }
+
+  @protected
+  ParentStruct dco_decode_box_autoadd_parent_struct(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_parent_struct(raw);
+  }
+
+  @protected
+  VariantNonOpaqueStruct dco_decode_box_autoadd_variant_non_opaque_struct(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_variant_non_opaque_struct(raw);
+  }
+
+  @protected
+  VariantWithoutTimestamp dco_decode_box_autoadd_variant_without_timestamp(
+    dynamic raw,
+  ) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_variant_without_timestamp(raw);
+  }
+
+  @protected
+  ChildStruct dco_decode_child_struct(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 4)
+      throw Exception('unexpected arr length: expect 4 but see ${arr.length}');
+    return ChildStruct(
+      id: dco_decode_String(arr[0]),
+      name: dco_decode_String(arr[1]),
+      parentId: dco_decode_String(arr[2]),
+      variant: dco_decode_enum_struct(arr[3]),
+    );
+  }
+
+  @protected
+  EnumStruct dco_decode_enum_struct(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    switch (raw[0]) {
+      case 0:
+        return EnumStruct_Variant1(
+          dco_decode_box_autoadd_variant_non_opaque_struct(raw[1]),
+        );
+      case 1:
+        return EnumStruct_Variant2(
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+            raw[1],
+          ),
+        );
+      case 2:
+        return EnumStruct_Variant3();
+      case 3:
+        return EnumStruct_Variant4(
+          dco_decode_box_autoadd_variant_without_timestamp(raw[1]),
+        );
+      default:
+        throw Exception("unreachable");
+    }
+  }
+
+  @protected
   Uint8List dco_decode_list_prim_u_8_strict(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as Uint8List;
+  }
+
+  @protected
+  ChildStruct? dco_decode_opt_box_autoadd_child_struct(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw == null ? null : dco_decode_box_autoadd_child_struct(raw);
+  }
+
+  @protected
+  ParentStruct dco_decode_parent_struct(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 3)
+      throw Exception('unexpected arr length: expect 3 but see ${arr.length}');
+    return ParentStruct(
+      id: dco_decode_String(arr[0]),
+      name: dco_decode_String(arr[1]),
+      child: dco_decode_opt_box_autoadd_child_struct(arr[2]),
+    );
   }
 
   @protected
@@ -163,6 +713,119 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  BigInt dco_decode_usize(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dcoDecodeU64(raw);
+  }
+
+  @protected
+  VariantNonOpaqueStruct dco_decode_variant_non_opaque_struct(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 3)
+      throw Exception('unexpected arr length: expect 3 but see ${arr.length}');
+    return VariantNonOpaqueStruct(
+      id: dco_decode_String(arr[0]),
+      name: dco_decode_String(arr[1]),
+      timestamp:
+          dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+            arr[2],
+          ),
+    );
+  }
+
+  @protected
+  VariantWithoutTimestamp dco_decode_variant_without_timestamp(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 2)
+      throw Exception('unexpected arr length: expect 2 but see ${arr.length}');
+    return VariantWithoutTimestamp(
+      id: dco_decode_String(arr[0]),
+      name: dco_decode_String(arr[1]),
+    );
+  }
+
+  @protected
+  AnyhowException sse_decode_AnyhowException(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var inner = sse_decode_String(deserializer);
+    return AnyhowException(inner);
+  }
+
+  @protected
+  OffsetDateTime
+  sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return OffsetDateTimeImpl.frbInternalSseDecode(
+      sse_decode_usize(deserializer),
+      sse_decode_i_32(deserializer),
+    );
+  }
+
+  @protected
+  VariantOpaqueStruct
+  sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalSseDecode(
+      sse_decode_usize(deserializer),
+      sse_decode_i_32(deserializer),
+    );
+  }
+
+  @protected
+  VariantOpaqueStruct
+  sse_decode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalSseDecode(
+      sse_decode_usize(deserializer),
+      sse_decode_i_32(deserializer),
+    );
+  }
+
+  @protected
+  VariantOpaqueStruct
+  sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalSseDecode(
+      sse_decode_usize(deserializer),
+      sse_decode_i_32(deserializer),
+    );
+  }
+
+  @protected
+  OffsetDateTime
+  sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return OffsetDateTimeImpl.frbInternalSseDecode(
+      sse_decode_usize(deserializer),
+      sse_decode_i_32(deserializer),
+    );
+  }
+
+  @protected
+  VariantOpaqueStruct
+  sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return VariantOpaqueStructImpl.frbInternalSseDecode(
+      sse_decode_usize(deserializer),
+      sse_decode_i_32(deserializer),
+    );
+  }
+
+  @protected
   String sse_decode_String(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     var inner = sse_decode_list_prim_u_8_strict(deserializer);
@@ -170,10 +833,108 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  ChildStruct sse_decode_box_autoadd_child_struct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_child_struct(deserializer));
+  }
+
+  @protected
+  ParentStruct sse_decode_box_autoadd_parent_struct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_parent_struct(deserializer));
+  }
+
+  @protected
+  VariantNonOpaqueStruct sse_decode_box_autoadd_variant_non_opaque_struct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_variant_non_opaque_struct(deserializer));
+  }
+
+  @protected
+  VariantWithoutTimestamp sse_decode_box_autoadd_variant_without_timestamp(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_variant_without_timestamp(deserializer));
+  }
+
+  @protected
+  ChildStruct sse_decode_child_struct(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var var_id = sse_decode_String(deserializer);
+    var var_name = sse_decode_String(deserializer);
+    var var_parentId = sse_decode_String(deserializer);
+    var var_variant = sse_decode_enum_struct(deserializer);
+    return ChildStruct(
+      id: var_id,
+      name: var_name,
+      parentId: var_parentId,
+      variant: var_variant,
+    );
+  }
+
+  @protected
+  EnumStruct sse_decode_enum_struct(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    var tag_ = sse_decode_i_32(deserializer);
+    switch (tag_) {
+      case 0:
+        var var_field0 = sse_decode_box_autoadd_variant_non_opaque_struct(
+          deserializer,
+        );
+        return EnumStruct_Variant1(var_field0);
+      case 1:
+        var var_field0 =
+            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+              deserializer,
+            );
+        return EnumStruct_Variant2(var_field0);
+      case 2:
+        return EnumStruct_Variant3();
+      case 3:
+        var var_field0 = sse_decode_box_autoadd_variant_without_timestamp(
+          deserializer,
+        );
+        return EnumStruct_Variant4(var_field0);
+      default:
+        throw UnimplementedError('');
+    }
+  }
+
+  @protected
   Uint8List sse_decode_list_prim_u_8_strict(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     var len_ = sse_decode_i_32(deserializer);
     return deserializer.buffer.getUint8List(len_);
+  }
+
+  @protected
+  ChildStruct? sse_decode_opt_box_autoadd_child_struct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    if (sse_decode_bool(deserializer)) {
+      return (sse_decode_box_autoadd_child_struct(deserializer));
+    } else {
+      return null;
+    }
+  }
+
+  @protected
+  ParentStruct sse_decode_parent_struct(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var var_id = sse_decode_String(deserializer);
+    var var_name = sse_decode_String(deserializer);
+    var var_child = sse_decode_opt_box_autoadd_child_struct(deserializer);
+    return ParentStruct(id: var_id, name: var_name, child: var_child);
   }
 
   @protected
@@ -185,6 +946,40 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   @protected
   void sse_decode_unit(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
+  }
+
+  @protected
+  BigInt sse_decode_usize(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getBigUint64();
+  }
+
+  @protected
+  VariantNonOpaqueStruct sse_decode_variant_non_opaque_struct(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var var_id = sse_decode_String(deserializer);
+    var var_name = sse_decode_String(deserializer);
+    var var_timestamp =
+        sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+          deserializer,
+        );
+    return VariantNonOpaqueStruct(
+      id: var_id,
+      name: var_name,
+      timestamp: var_timestamp,
+    );
+  }
+
+  @protected
+  VariantWithoutTimestamp sse_decode_variant_without_timestamp(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    var var_id = sse_decode_String(deserializer);
+    var var_name = sse_decode_String(deserializer);
+    return VariantWithoutTimestamp(id: var_id, name: var_name);
   }
 
   @protected
@@ -200,9 +995,162 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_AnyhowException(
+    AnyhowException self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_String(self.message, serializer);
+  }
+
+  @protected
+  void
+  sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+    OffsetDateTime self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+      (self as OffsetDateTimeImpl).frbInternalSseEncode(move: true),
+      serializer,
+    );
+  }
+
+  @protected
+  void
+  sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    VariantOpaqueStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+      (self as VariantOpaqueStructImpl).frbInternalSseEncode(move: true),
+      serializer,
+    );
+  }
+
+  @protected
+  void
+  sse_encode_Auto_RefMut_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    VariantOpaqueStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+      (self as VariantOpaqueStructImpl).frbInternalSseEncode(move: false),
+      serializer,
+    );
+  }
+
+  @protected
+  void
+  sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    VariantOpaqueStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+      (self as VariantOpaqueStructImpl).frbInternalSseEncode(move: false),
+      serializer,
+    );
+  }
+
+  @protected
+  void
+  sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+    OffsetDateTime self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+      (self as OffsetDateTimeImpl).frbInternalSseEncode(move: null),
+      serializer,
+    );
+  }
+
+  @protected
+  void
+  sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+    VariantOpaqueStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_usize(
+      (self as VariantOpaqueStructImpl).frbInternalSseEncode(move: null),
+      serializer,
+    );
+  }
+
+  @protected
   void sse_encode_String(String self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_list_prim_u_8_strict(utf8.encoder.convert(self), serializer);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_child_struct(
+    ChildStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_child_struct(self, serializer);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_parent_struct(
+    ParentStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_parent_struct(self, serializer);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_variant_non_opaque_struct(
+    VariantNonOpaqueStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_variant_non_opaque_struct(self, serializer);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_variant_without_timestamp(
+    VariantWithoutTimestamp self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_variant_without_timestamp(self, serializer);
+  }
+
+  @protected
+  void sse_encode_child_struct(ChildStruct self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_String(self.id, serializer);
+    sse_encode_String(self.name, serializer);
+    sse_encode_String(self.parentId, serializer);
+    sse_encode_enum_struct(self.variant, serializer);
+  }
+
+  @protected
+  void sse_encode_enum_struct(EnumStruct self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    switch (self) {
+      case EnumStruct_Variant1(field0: final field0):
+        sse_encode_i_32(0, serializer);
+        sse_encode_box_autoadd_variant_non_opaque_struct(field0, serializer);
+      case EnumStruct_Variant2(field0: final field0):
+        sse_encode_i_32(1, serializer);
+        sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerVariantOpaqueStruct(
+          field0,
+          serializer,
+        );
+      case EnumStruct_Variant3():
+        sse_encode_i_32(2, serializer);
+      case EnumStruct_Variant4(field0: final field0):
+        sse_encode_i_32(3, serializer);
+        sse_encode_box_autoadd_variant_without_timestamp(field0, serializer);
+    }
   }
 
   @protected
@@ -213,6 +1161,27 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_i_32(self.length, serializer);
     serializer.buffer.putUint8List(self);
+  }
+
+  @protected
+  void sse_encode_opt_box_autoadd_child_struct(
+    ChildStruct? self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    sse_encode_bool(self != null, serializer);
+    if (self != null) {
+      sse_encode_box_autoadd_child_struct(self, serializer);
+    }
+  }
+
+  @protected
+  void sse_encode_parent_struct(ParentStruct self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_String(self.id, serializer);
+    sse_encode_String(self.name, serializer);
+    sse_encode_opt_box_autoadd_child_struct(self.child, serializer);
   }
 
   @protected
@@ -227,6 +1196,36 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_usize(BigInt self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putBigUint64(self);
+  }
+
+  @protected
+  void sse_encode_variant_non_opaque_struct(
+    VariantNonOpaqueStruct self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_String(self.id, serializer);
+    sse_encode_String(self.name, serializer);
+    sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerOffsetDateTime(
+      self.timestamp,
+      serializer,
+    );
+  }
+
+  @protected
+  void sse_encode_variant_without_timestamp(
+    VariantWithoutTimestamp self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_String(self.id, serializer);
+    sse_encode_String(self.name, serializer);
+  }
+
+  @protected
   void sse_encode_i_32(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putInt32(self);
@@ -237,4 +1236,80 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self ? 1 : 0);
   }
+}
+
+@sealed
+class OffsetDateTimeImpl extends RustOpaque implements OffsetDateTime {
+  // Not to be used by end users
+  OffsetDateTimeImpl.frbInternalDcoDecode(List<dynamic> wire)
+    : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  OffsetDateTimeImpl.frbInternalSseDecode(BigInt ptr, int externalSizeOnNative)
+    : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib.instance.api.rust_arc_increment_strong_count_OffsetDateTime,
+    rustArcDecrementStrongCount:
+        RustLib.instance.api.rust_arc_decrement_strong_count_OffsetDateTime,
+    rustArcDecrementStrongCountPtr:
+        RustLib.instance.api.rust_arc_decrement_strong_count_OffsetDateTimePtr,
+  );
+}
+
+@sealed
+class VariantOpaqueStructImpl extends RustOpaque
+    implements VariantOpaqueStruct {
+  // Not to be used by end users
+  VariantOpaqueStructImpl.frbInternalDcoDecode(List<dynamic> wire)
+    : super.frbInternalDcoDecode(wire, _kStaticData);
+
+  // Not to be used by end users
+  VariantOpaqueStructImpl.frbInternalSseDecode(
+    BigInt ptr,
+    int externalSizeOnNative,
+  ) : super.frbInternalSseDecode(ptr, externalSizeOnNative, _kStaticData);
+
+  static final _kStaticData = RustArcStaticData(
+    rustArcIncrementStrongCount:
+        RustLib
+            .instance
+            .api
+            .rust_arc_increment_strong_count_VariantOpaqueStruct,
+    rustArcDecrementStrongCount:
+        RustLib
+            .instance
+            .api
+            .rust_arc_decrement_strong_count_VariantOpaqueStruct,
+    rustArcDecrementStrongCountPtr:
+        RustLib
+            .instance
+            .api
+            .rust_arc_decrement_strong_count_VariantOpaqueStructPtr,
+  );
+
+  String get id => RustLib.instance.api
+      .crateApiSimpleVariantOpaqueStructAutoAccessorGetId(that: this);
+
+  String get name => RustLib.instance.api
+      .crateApiSimpleVariantOpaqueStructAutoAccessorGetName(that: this);
+
+  OffsetDateTime get timestamp => RustLib.instance.api
+      .crateApiSimpleVariantOpaqueStructAutoAccessorGetTimestamp(that: this);
+
+  set id(String id) => RustLib.instance.api
+      .crateApiSimpleVariantOpaqueStructAutoAccessorSetId(that: this, id: id);
+
+  set name(String name) =>
+      RustLib.instance.api.crateApiSimpleVariantOpaqueStructAutoAccessorSetName(
+        that: this,
+        name: name,
+      );
+
+  set timestamp(OffsetDateTime timestamp) => RustLib.instance.api
+      .crateApiSimpleVariantOpaqueStructAutoAccessorSetTimestamp(
+        that: this,
+        timestamp: timestamp,
+      );
 }
